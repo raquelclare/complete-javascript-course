@@ -83,96 +83,112 @@ console.log(typeof x);
 * OPERATOR PRECEDENCE
  */
 
- var now = 2018;
- var yearJohn = 1989;
- var fullAge = 18;
+//  var now = 2018;
+//  var yearJohn = 1989;
+//  var fullAge = 18;
 
-// Multiple operators 
- var isFullAge = now - yearJohn >= fullAge; // true
- console.log(isFullAge);
+// // Multiple operators 
+//  var isFullAge = now - yearJohn >= fullAge; // true
+//  console.log(isFullAge);
 
-// Grouping
- var ageJohn = now - yearJohn;
- var ageMark = 35;
- var average = (ageJohn + ageMark) / 2;
- console.log(average);
+// // Grouping
+//  var ageJohn = now - yearJohn;
+//  var ageMark = 35;
+//  var average = (ageJohn + ageMark) / 2;
+//  console.log(average);
 
- // Multiple assignments
- var x, y;
- x = y = (3 + 5) * 4 - 6; // 8 * 4 - 6 // 32 - 6 // 26
- console.log(x, y);
+//  // Multiple assignments
+//  var x, y;
+//  x = y = (3 + 5) * 4 - 6; // 8 * 4 - 6 // 32 - 6 // 26
+//  console.log(x, y);
 
- // More operators
-x *= 2; // x = x * 2
-console.log(x);
-x += 10; // x = x + 10
-console.log(x);
-x++ // x += 1 // x = x + 1
-console.log(x);
+//  // More operators
+// x *= 2; // x = x * 2
+// console.log(x);
+// x += 10; // x = x + 10
+// console.log(x);
+// x++ // x += 1 // x = x + 1
+// console.log(x);
 
-// Coding challenge 1 - calculating BMI
+// // Coding challenge 1 - calculating BMI
 
-// 1. Store Mark's and John's mass and height in variables
-var massMark, massJohn, heightMark, heightJohn;
-massMark = 81;
-massJohn = 90;
-heightMark = 1.9;
-heightJohn = 1.8;
+// // 1. Store Mark's and John's mass and height in variables
+// var massMark, massJohn, heightMark, heightJohn;
+// massMark = 81;
+// massJohn = 90;
+// heightMark = 1.9;
+// heightJohn = 1.8;
 
-console.log(massMark, massJohn, heightMark, heightJohn);
+// console.log(massMark, massJohn, heightMark, heightJohn);
 
-// 2. Calculate both their BMIs
-var bmiMark, bmiJohn;
-bmiMark = massMark / heightMark**2;
-bmiJohn = massJohn / heightJohn**2;
+// // 2. Calculate both their BMIs
+// var bmiMark, bmiJohn;
+// bmiMark = massMark / heightMark**2;
+// bmiJohn = massJohn / heightJohn**2;
 
-console.log("Mark's BMI is " + bmiMark);
-console.log("John's BMI is " + bmiJohn);
+// console.log("Mark's BMI is " + bmiMark);
+// console.log("John's BMI is " + bmiJohn);
 
-// 3. Create a boolean variable containing information about whether Mark has a higher BMI than John
-var isMarksBMIhigherThanJohns = bmiMark > bmiJohn;
+// // 3. Create a boolean variable containing information about whether Mark has a higher BMI than John
+// var isMarksBMIhigherThanJohns = bmiMark > bmiJohn;
 
-console.log(isMarksBMIhigherThanJohns);
+// console.log(isMarksBMIhigherThanJohns);
 
-// 4. Print a string to the console containing the variable from step 3. 
-console.log("Is Mark's BMI higher than Johns? " + isMarksBMIhigherThanJohns);
+// // 4. Print a string to the console containing the variable from step 3. 
+// console.log("Is Mark's BMI higher than Johns? " + isMarksBMIhigherThanJohns);
 
-// ****************** If/else statements ******************
+// // ****************** If/else statements ******************
 
-var firstName = "John";
-var civilStatus = "single";
+// var firstName = "John";
+// var civilStatus = "single";
 
-if (civilStatus === "married") {
-    console.log(firstName + ' is married!');
-} else {
-    console.log(firstName + " will hopefull marry soon :)");
-}
+// if (civilStatus === "married") {
+//     console.log(firstName + ' is married!');
+// } else {
+//     console.log(firstName + " will hopefull marry soon :)");
+// }
 
-var isMarried = true;
-if (isMarried) {
-    console.log(firstName + ' is married!');
-} else {
-    console.log(firstName + " will hopefull marry soon :)");
-}
+// var isMarried = true;
+// if (isMarried) {
+//     console.log(firstName + ' is married!');
+// } else {
+//     console.log(firstName + " will hopefull marry soon :)");
+// }
 
-// Rewrite the Coding Challenge 1 - calculating BMI
+// // Rewrite the Coding Challenge 1 - calculating BMI
  
-if (bmiMark > bmiJohn) {
-    console.log("Mark's BMI is higher than John's.")
-} else {
-    console.log("John's BMI is higher than Mark's");
-}
+// if (bmiMark > bmiJohn) {
+//     console.log("Mark's BMI is higher than John's.")
+// } else {
+//     console.log("John's BMI is higher than Mark's");
+// }
 
-// ****************** Boolean Logic ******************
+// // ****************** Boolean Logic ******************
+// var firstName = "John";
+// var age = 20;
+
+// if (age < 13) {
+//     console.log(firstName + " is a boy.");
+// } else if (age >= 13 && age < 20) { // Between the ages of 13 - 20 // age >= 13 && age < 20
+//     console.log(firstName + " is a teenager.");
+// } else if (age >= 20 && age < 30) {
+//     console.log(firstName + " is a young man.");
+// }else {
+//     console.log(firstName + " is a man.");
+// }
+
+// ******************** The Ternary Operator and Switch Statements ************
 var firstName = "John";
-var age = 20;
+var age = 21;
 
-if (age < 13) {
-    console.log(firstName + " is a boy.");
-} else if (age >= 13 && age < 20) { // Between the ages of 13 - 20 // age >= 13 && age < 20
-    console.log(firstName + " is a teenager.");
-} else if (age >= 20 && age < 30) {
-    console.log(firstName + " is a young man.");
-}else {
-    console.log(firstName + " is a man.");
+age >= 18 ? console.log(firstName + " drinks beer.") : console.log(firstName + " drinks juice." );
+
+var drink = age >= 18 ? "beer" : "juice";
+console.log(drink);
+
+// This would be the long form of the ternary operator
+if (age >= 18) { 
+    var drink = "beer";
+} else {
+    var drink = "juice";
 }
