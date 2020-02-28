@@ -425,3 +425,23 @@ console.log(john.indexOf(1990)); // returns the position of the element within t
 
 var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
 console.log(isDesigner);
+// remember that -1 indicates that an element is not present in an array
+
+// *************** CODING CHALLENGE 3 ***************
+
+// In the end, John would like to have 2 arrays
+// 1. Containing all three tips
+// 2. Containing all three final paid amounts (bill + tip)
+
+var bill1, bill2, bill3;
+bill1 = 124;
+bill2 = 48;
+bill3 = 268;
+
+var bills = [124, 48, 268];
+var tips = [];
+var billPlusTips = [];
+
+function calculateTips(tip1, tip2, tip3) {
+    if  
+}
