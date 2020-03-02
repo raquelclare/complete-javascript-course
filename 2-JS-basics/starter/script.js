@@ -440,8 +440,29 @@ bill3 = 268;
 
 var bills = [124, 48, 268];
 var tips = [];
-var billPlusTips = [];
+var totals = [];
 
-function calculateTips(tip1, tip2, tip3) {
-    if  
+function calculateTotals(bill) {
+    if  (bill < 50) {
+        var tip = bill * 0.2;
+        tips.push(tip);
+        var total = bill + tip;
+        totals.push(total);
+    } else if (bill >= 50 && bill < 200) {
+        var tip = bill * .15;
+        tips.push(tip);
+        var total = bill + tip;
+        totals.push(total);
+    } else {
+        var tip = bill * .1;
+        tips.push(tip);
+        var total = bill + tip;
+        totals.push(total);
+    }
 }
+
+calculateTotals(bill1);
+calculateTotals(bill2);
+calculateTotals(bill3);
+console.log("The tips are: " + tips);
+console.log("The bill totals, including tip, are: " + totals);
