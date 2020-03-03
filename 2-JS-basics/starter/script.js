@@ -433,10 +433,10 @@ console.log(isDesigner);
 // 1. Containing all three tips
 // 2. Containing all three final paid amounts (bill + tip)
 
-var bill1, bill2, bill3;
-bill1 = 124;
-bill2 = 48;
-bill3 = 268;
+// var bill1, bill2, bill3;
+// bill1 = 124;
+// bill2 = 48;
+// bill3 = 268;
 
 var bills = [124, 48, 268];
 var tips = [];
@@ -461,8 +461,9 @@ function calculateTotals(bill) {
     }
 }
 
-calculateTotals(bill1);
-calculateTotals(bill2);
-calculateTotals(bill3);
+calculateTotals(bills[0]);
+calculateTotals(bills[1]);
+calculateTotals(bills[2]);
+
 console.log("The tips are: " + tips);
 console.log("The bill totals, including tip, are: " + totals);
