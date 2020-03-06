@@ -467,3 +467,113 @@ calculateTotals(bills[2]);
 
 console.log("The tips are: " + tips);
 console.log("The bill totals, including tip, are: " + totals);
+
+// ***************** Objects and Properties *****************
+// Define key/value pairs
+// Group together different variables that belong together and that have no particular order
+// In arrays, order matters. In objects, order does not matter.
+
+// 2 ways of defining objects
+// 1. object literal
+var john = {
+    // firstName is a property of the john object
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false
+};
+console.log(john);
+
+// accessing these properties using dot notation
+console.log(john.firstName);
+// accessing these properties using bracket notation
+console.log(john['lastName']);
+// accessing these properties using variables
+var x = 'birthYear';
+console.log(john[x]);
+
+// mutating the data/properties
+john.job = 'designer';
+john['isMarried'] = true;
+console.log(john);
+
+// 2. object syntax
+var jane = new Object();
+jane.name = 'Jane';
+jane.birthYear = 1969;
+jane['lastName'] = 'Smith';
+console.log(jane);
+
+// ***************** Objects and Methods *****************
+// We can also attach functions to objects - Methods
+
+var melissa = {
+    firstName: 'Melissa',
+    lastName: 'Janiga',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'engineer',
+    isMarried: false,
+    calcAge: function(birthYear) {
+        // function expression
+        // this function is now a method of john
+        // return 2018 - this.birthYear;
+        // this = the object on which we have defined calcAge
+        this.age = 2018 - this.birthYear;
+    }
+};
+
+// below is the progression of using this and functions
+// console.log(melissa.calcAge());
+// var age = melissa.calcAge();
+// john.age = melissa.calcAge();
+melissa.calcAge();
+console.log(melissa);
+
+// *************** CODING CHALLENGE 4 ***************
+// 1. For each of them, create an object with properties for their full name, mass, and height
+// 2. Add a method to each object to calculate the BMI. Same the BMI to the object and also return it from the method.
+
+var chris = {
+    firstName: 'Chris',
+    lastName: 'Kettle',
+    mass: 80,
+    height: 1.7,
+    calcBMI: function(mass, height) {
+        this.bmi = this.mass / this.height**2;
+        return this.bmi;
+    }
+};
+// chris.calcBMI();
+// console.log(chris);
+
+var bob = {
+    firstName: 'Bob',
+    lastName: 'Bubble',
+    mass: 90,
+    height: 1.5,
+    calcBMI: function(mass, height) {
+        this.bmi = this.mass / this.height**2;
+        return this.bmi;
+    }
+};
+// bob.calcBMI();
+// console.log(bob);
+
+// 3. Log to the console who has the hightest BMI, together with the full name and their respective BMI.
+
+// console.log(chris.calcBMI());
+// console.log(bob.calcBMI());
+function compareBMI() {
+    if (chris.calcBMI() === bob.calcBMI()) {
+        console.log(chris.firstName + ' and ' + bob.firstName + ' have the same BMI!');
+    } else if (chris.calcBMI() > bob.calcBMI()) {
+        console.log(chris.firstName + ' has a higher BMI than Bob, with a BMI of ' + chris.calcBMI());
+    } else {
+        console.log(bob.firstName + ' has a higher BMI than Chris, with a BMI of ' + bob.calcBMI());
+    }
+}
+
+compareBMI();
