@@ -438,35 +438,35 @@ console.log(isDesigner);
 // bill2 = 48;
 // bill3 = 268;
 
-var bills = [124, 48, 268];
-var tips = [];
-var totals = [];
+// var bills = [124, 48, 268];
+// var tips = [];
+// var totals = [];
 
-function calculateTotals(bill) {
-    if  (bill < 50) {
-        var tip = bill * 0.2;
-        tips.push(tip);
-        var total = bill + tip;
-        totals.push(total);
-    } else if (bill >= 50 && bill < 200) {
-        var tip = bill * .15;
-        tips.push(tip);
-        var total = bill + tip;
-        totals.push(total);
-    } else {
-        var tip = bill * .1;
-        tips.push(tip);
-        var total = bill + tip;
-        totals.push(total);
-    }
-}
+// function calculateTotals(bill) {
+//     if  (bill < 50) {
+//         var tip = bill * 0.2;
+//         tips.push(tip);
+//         var total = bill + tip;
+//         totals.push(total);
+//     } else if (bill >= 50 && bill < 200) {
+//         var tip = bill * .15;
+//         tips.push(tip);
+//         var total = bill + tip;
+//         totals.push(total);
+//     } else {
+//         var tip = bill * .1;
+//         tips.push(tip);
+//         var total = bill + tip;
+//         totals.push(total);
+//     }
+// }
 
-calculateTotals(bills[0]);
-calculateTotals(bills[1]);
-calculateTotals(bills[2]);
+// calculateTotals(bills[0]);
+// calculateTotals(bills[1]);
+// calculateTotals(bills[2]);
 
-console.log("The tips are: " + tips);
-console.log("The bill totals, including tip, are: " + totals);
+// console.log("The tips are: " + tips);
+// console.log("The bill totals, including tip, are: " + totals);
 
 // ***************** Objects and Properties *****************
 // Define key/value pairs
@@ -577,3 +577,103 @@ function compareBMI() {
 }
 
 compareBMI();
+
+// ******************** Loops and iteration ********************
+// Automate repetitive tasks
+
+// For loop
+// Has 3 parts:
+// 1. initial value of a counter
+// 2. a condition that is evaluated before each loop iteration to check if the loop should still be executed
+// 3. a counter update
+
+for (var i = 0; i < 10; i++) {
+    // Loop block
+    console.log(i);
+}
+
+// i  = 0, 0 < 10 is true, log i to console, counter updated i++
+// i = 1, 1 < 10 is true, log i to console, counter updated
+// i = 2, 2 < 10 is true, log i to console, counter updated
+// ...
+// i = 9, 9 < 10 is true, log i to console, counter updated
+// i 10, 10 < 10 is FALSE ==> exits the loop
+
+var margarita = ['Margarita', 'Barron', 1990, 'designer', false];
+
+for (var i = 0; i < margarita.length; i++) {
+    console.log(margarita[i]);
+}
+
+// Looping through arrays is usually one of the biggest uses of a for loop
+
+// While loop
+// In while loop, we only pass in the condition
+var i = 0;
+while (i < margarita.length) {
+    console.log(margarita[i]);
+    i++;
+}
+
+// continue and break statements
+// continue will quit the current iteration and continue onto the next. Seems like a skip
+// break will quit the loop entirely once the condition passed is met
+var ivana = ['Ivana', 'Hicks', 1990, 'blogger', false];
+for (var i = 0; i < ivana.length; i++) {
+    if (typeof ivana[i] !== 'string') continue;
+    // can also be written
+    // if (typeof ivana[i] !== 'string') {
+        // continue 
+        //}
+    console.log(ivana[i]);
+}
+
+var mayra = ['Mayra', 'Roman', 1990, 'student', false];
+for (var i = 0; i < mayra.length; i++) {
+    if (typeof mayra[i] !== 'string') break;
+    console.log(mayra[i]);
+}
+
+// Looping backwards
+for (var i = ivana.length - 1; i >= 0; i--) {
+    console.log(ivana[i]);
+}
+
+// *************** CODING CHALLENGE 5 ***************
+// 1. Create an object with an array for the bill values
+// 2. Add a method to calculate the tip
+// 3. This method should include a loop to iterate over all the paid pills and do the tip calculations
+// 4. As an outpus, create:
+    // 1) a new array containing all tips
+    // 2) an array containing final paid amounts
+    
+var bill = {
+    bills: [124, 48, 268, 180, 42],
+    tips: [],
+    totals: [],
+    calculateTip: function(bill) {
+        for (i = 0; i < this.bills.length; i++) {
+            if  (this.bills[i] < 50) {
+                var tip = this.bills[i] * 0.2;
+                this.tips.push(tip);
+                var total = this.bills[i] + tip;
+                this.totals.push(total);
+            } else if (this.bills[i] >= 50 && this.bills[i] < 200) {
+                var tip = this.bills[i] * .15;
+                this.tips.push(tip);
+                var total = this.bills[i] + tip;
+                this.totals.push(total);
+            } else {
+                var tip = this.bills[i] * .1;
+                this.tips.push(tip);
+                var total = this.bills[i] + tip;
+                this.totals.push(total);
+            }
+        }
+        // console.log(this.bills);
+        console.log('All tips: ' + this.tips + '\n' + 'Final paid amounts: ' + this.totals);
+        // console.log(this.totals);
+        // return [this.bills, this.tips, this.totals];
+    }
+}
+bill.calculateTip();
