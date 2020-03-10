@@ -647,7 +647,7 @@ for (var i = ivana.length - 1; i >= 0; i--) {
     // 1) a new array containing all tips
     // 2) an array containing final paid amounts
     
-var bill = {
+var johnsFamilyBill = {
     bills: [124, 48, 268, 180, 42],
     tips: [],
     totals: [],
@@ -676,4 +676,63 @@ var bill = {
         // return [this.bills, this.tips, this.totals];
     }
 }
-bill.calculateTip();
+johnsFamilyBill.calculateTip();
+
+// EXTRA
+// 5. Implement same functionality for Mark's family holiday trip using Marks tipping rules
+
+var marksFamilyBill = {
+    bills: [77, 375, 110, 45],
+    tips: [],
+    totals: [],
+    calculateTip: function(bill) {
+        for (i = 0; i < this.bills.length; i++) {
+            if  (this.bills[i] < 100) {
+                var tip = this.bills[i] * 0.2;
+                this.tips.push(tip);
+                var total = this.bills[i] + tip;
+                this.totals.push(total);
+            } else if (this.bills[i] >= 100 && this.bills[i] <= 300) {
+                var tip = this.bills[i] * .1;
+                this.tips.push(tip);
+                var total = this.bills[i] + tip;
+                this.totals.push(total);
+            } else {
+                var tip = this.bills[i] * .25;
+                this.tips.push(tip);
+                var total = this.bills[i] + tip;
+                this.totals.push(total);
+            }
+        }
+        console.log('All tips: ' + this.tips + '\n' + 'Final paid amounts: ' + this.totals);
+    }
+}
+marksFamilyBill.calculateTip();
+
+// 6. Create a function to calculate the average of a given array of tips
+
+function calculateAverage(array) {
+    var avg;
+    var sum = 0;
+    for (i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    avg = (sum / array.length);
+    // console.log(avg);
+    return avg;
+} 
+
+// 7. Calculate the average tip for each family
+var johnsFamilyTipAverage = calculateAverage(johnsFamilyBill.tips);
+var marksFamilyTipAverage = calculateAverage(marksFamilyBill.tips);
+
+// 8. Log to the console which family paid the highest tips on average
+function highestTipAverage() {
+    if (johnsFamilyTipAverage > marksFamilyTipAverage){
+        console.log('Johns Family paid the highest tips on average.');
+    } else {
+        console.log('Marks Family paid the highest tips on average.');
+    }
+}
+
+highestTipAverage();
